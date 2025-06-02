@@ -1,0 +1,6 @@
+<resources>
+
+    <style name="Base.Theme.Counter" parent="Theme.Material3.DayNight.NoActionBar" />
+
+    <style name="Theme.Counter" parent="Base.Theme.Counter" />
+</resources>

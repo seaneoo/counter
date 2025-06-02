@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Counter</string>
+    <string name="lorem_ipsum">Lorem Ipsum</string>
+    <string name="inc1">+1</string>
+    <string name="dec1">-1</string>
+    <string name="inc10">+10</string>
+    <string name="dec10">-10</string>
+    <string name="dec100">-100</string>
+    <string name="inc100">+100</string>
+</resources>
