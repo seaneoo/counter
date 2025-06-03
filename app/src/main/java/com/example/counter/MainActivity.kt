@@ -1,10 +1,12 @@
 package com.example.counter
 
 import android.os.Bundle
+import android.text.Editable
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.ViewModelProvider
 import com.example.counter.databinding.ActivityMainBinding
 import java.util.Locale
@@ -33,19 +35,17 @@ class MainActivity : AppCompatActivity() {
             binding.counterText.text = String.format(Locale.ENGLISH, "%03d", it)
 
             binding.decrementButton.isEnabled = it > 0
-            binding.decrement10Button.isEnabled = it > 0
-            binding.decrement100Button.isEnabled = it > 0
             binding.resetButton.isEnabled = it > 0
         }
 
-        binding.incrementButton.setOnClickListener { viewModel.increment(1) }
-        binding.increment10Button.setOnClickListener { viewModel.increment(10) }
-        binding.increment100Button.setOnClickListener { viewModel.increment(100) }
+        binding.valueTextField.editText?.let {
+            it.addTextChangedListener { editable -> viewModel.setAmount(editable.toString()) }
 
-        binding.decrementButton.setOnClickListener { viewModel.decrement(1) }
-        binding.decrement10Button.setOnClickListener { viewModel.decrement(10) }
-        binding.decrement100Button.setOnClickListener { viewModel.decrement(100) }
+            it.text = Editable.Factory.getInstance().newEditable(viewModel.amount.value.toString())
+        }
 
+        binding.incrementButton.setOnClickListener { viewModel.increment() }
+        binding.decrementButton.setOnClickListener { viewModel.decrement() }
         binding.resetButton.setOnClickListener { viewModel.reset() }
     }
 }

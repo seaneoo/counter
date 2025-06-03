@@ -19,60 +19,46 @@
 
     <LinearLayout
         style="?android:attr/buttonBarStyle"
-        android:layout_width="wrap_content"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
         android:layout_marginTop="16dp"
-        android:orientation="horizontal"
-        tools:ignore="ButtonStyle">
-
-        <Button
-            android:id="@+id/increment_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/inc1" />
-
-        <Button
-            android:id="@+id/increment_10_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="@string/inc10" />
-
-        <Button
-            android:id="@+id/increment_100_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="@string/inc100" />
-    </LinearLayout>
-
-    <LinearLayout
-        style="?android:attr/buttonBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:gravity="center"
         android:orientation="horizontal"
         tools:ignore="ButtonStyle">
 
         <Button
             android:id="@+id/decrement_button"
+            style="?attr/materialIconButtonFilledStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/dec1" />
+            android:contentDescription="@string/decrement"
+            app:icon="@drawable/decrement" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/value_textField"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_weight="1"
+            android:hint="@string/value"
+            app:helperTextTextColor="@color/design_default_color_error">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="@string/lorem_ipsum" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/decrement_10_button"
+            android:id="@+id/increment_button"
+            style="?attr/materialIconButtonFilledStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="@string/dec10" />
-
-        <Button
-            android:id="@+id/decrement_100_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="@string/dec100" />
+            android:contentDescription="@string/increment"
+            app:icon="@drawable/increment" />
     </LinearLayout>
 
     <Button
