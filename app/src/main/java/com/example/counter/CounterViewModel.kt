@@ -18,4 +18,8 @@ class CounterViewModel : ViewModel() {
         val current = _counter.value ?: 0
         _counter.value = (current - amount).coerceAtLeast(0)
     }
+
+    fun reset() {
+        _counter.value = 0
+    }
 }

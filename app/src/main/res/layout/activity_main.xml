@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
@@ -73,4 +74,13 @@
             android:layout_marginStart="8dp"
             android:text="@string/dec100" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/reset_button"
+        style="?attr/materialIconButtonFilledStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/reset"
+        app:icon="@drawable/reset" />
 </LinearLayout>

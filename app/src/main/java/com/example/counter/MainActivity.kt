@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
             binding.decrementButton.isEnabled = it > 0
             binding.decrement10Button.isEnabled = it > 0
             binding.decrement100Button.isEnabled = it > 0
+            binding.resetButton.isEnabled = it > 0
         }
 
         binding.incrementButton.setOnClickListener { viewModel.increment(1) }
@@ -44,5 +45,7 @@ class MainActivity : AppCompatActivity() {
         binding.decrementButton.setOnClickListener { viewModel.decrement(1) }
         binding.decrement10Button.setOnClickListener { viewModel.decrement(10) }
         binding.decrement100Button.setOnClickListener { viewModel.decrement(100) }
+
+        binding.resetButton.setOnClickListener { viewModel.reset() }
     }
 }

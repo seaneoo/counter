@@ -7,4 +7,5 @@
     <string name="dec10">-10</string>
     <string name="dec100">-100</string>
     <string name="inc100">+100</string>
+    <string name="reset">Reset</string>
 </resources>
